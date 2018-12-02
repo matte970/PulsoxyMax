@@ -21,7 +21,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        android:clickable="true"
+        android:onClick="go_to_e_mail"/>
 
     <Button
         android:id="@+id/button3"
@@ -53,7 +55,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintTop_toBottomOf="@+id/button3"
+        android:clickable="true"
+        android:onClick="go_to_limits"/>
 
     <Button
         android:id="@+id/button5"
@@ -69,7 +73,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+        app:layout_constraintTop_toBottomOf="@+id/button4"
+        android:clickable="true"
+        android:onClick="go_to_tones"/>
 
     <Button
         android:id="@+id/button"
@@ -95,10 +101,12 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/round_start_ok"
-        android:text="Button"
+        android:text="OK"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button5" />
+        app:layout_constraintTop_toBottomOf="@+id/button5"
+        android:clickable="true"
+        android:onClick="go_to_home"/>
 
     <ImageView
         android:id="@+id/imageView"
@@ -114,5 +122,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button6"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/logo"
+        android:clickable="true"
+        android:onClick="go_to_start"/>
 </android.support.constraint.ConstraintLayout>
