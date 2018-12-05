@@ -27,5 +27,6 @@ public class e_mail extends AppCompatActivity {
     public void go_to_options(android.view.View next) {
         Intent i = new Intent(this, stats.class);
         startActivity(i);
+        int a = 0;
     }
 }
