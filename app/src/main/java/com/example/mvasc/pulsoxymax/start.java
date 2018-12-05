@@ -15,4 +15,10 @@ public class start extends AppCompatActivity {
         Intent i = new Intent(this, home.class);
         startActivity(i);
     }
+
+    public void go_to_setUp(android.view.View next){
+        Intent i = new Intent(this, set_up.class);
+        startActivity(i);
+    }
 }
+
