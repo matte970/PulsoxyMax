@@ -19,7 +19,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         initializeDatabaseRecords(db);
     }
 
-    public void insertRecord(SQLiteDatabase db, int oxy, long time) {
+    public void insertRecord(OxyValue value){
+        SQLiteDatabase db = getWritableDatabase();
+        insertRecord(db, value.getOxy(), value.getTime());
+    }
+
+    private void insertRecord(SQLiteDatabase db, int oxy, long time) {
         ContentValues record = new ContentValues();
         record.put("oxy", oxy);
         record.put("time", time);

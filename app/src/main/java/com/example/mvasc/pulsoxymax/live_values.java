@@ -7,34 +7,41 @@ import android.support.v7.app.AppCompatActivity;
 
 public class live_values extends AppCompatActivity {
 
+    DatabaseHelper databaseHelper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_live_values);
 
-        System.out.println("livevalues");
+        this.databaseHelper = new DatabaseHelper(this);
+    }
 
-        DatabaseHelper dbHelper = new DatabaseHelper(this);
+    public void addDummyRecord(android.view.View next) {
+        OxyValue dummy = new OxyValue(1000, System.currentTimeMillis());
+        this.databaseHelper.insertRecord(dummy);
+    }
 
-        SQLiteDatabase db = dbHelper.getReadableDatabase();
+    public void printAllRecords(android.view.View next) {
+        SQLiteDatabase db = this.databaseHelper.getReadableDatabase();
 
         Cursor cursor = db.query(DatabaseHelper.DB_NAME, new String[]{"oxy", "time"}, null, null, null, null, null);
 
-
         if (cursor.moveToFirst()) {
-            Long oxy = cursor.getLong(0);
-            Long time = cursor.getLong(1);
-            System.out.println("juhu " + oxy);
-            System.out.println("bbb " + time);
+            OxyValue oxy = getOxyValue(cursor);
+            System.out.println(oxy);
             while (cursor.moveToNext()) {
-                oxy = cursor.getLong(0);
-                time = cursor.getLong(1);
-                System.out.println("juhu " + oxy);
-                System.out.println("bbb " + time);
+                oxy = getOxyValue(cursor);
+                System.out.println(oxy);
             }
-
         } else {
-            System.out.println("oh nein");
+            // no records in database
         }
+    }
+
+    private OxyValue getOxyValue(Cursor cursor) {
+        Integer oxy = cursor.getInt(0);
+        Long time = cursor.getLong(1);
+        return new OxyValue(oxy, time);
     }
 }
