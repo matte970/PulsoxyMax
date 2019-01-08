@@ -25,7 +25,7 @@ public class live_values extends AppCompatActivity {
     public void printAllRecords(android.view.View next) {
         SQLiteDatabase db = this.databaseHelper.getReadableDatabase();
 
-        Cursor cursor = db.query(DatabaseHelper.DB_NAME, new String[]{"oxy", "time"}, null, null, null, null, null);
+        Cursor cursor = db.query(DatabaseHelper.TABLE_NAME, new String[]{"oxy", "time"}, null, null, null, null, null);
 
         if (cursor.moveToFirst()) {
             OxyValue oxy = getOxyValue(cursor);

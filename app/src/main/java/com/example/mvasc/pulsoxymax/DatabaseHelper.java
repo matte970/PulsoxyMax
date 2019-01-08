@@ -8,9 +8,14 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static final String DB_NAME = "PULSOXYMAX";
+    public static final String TABLE_NAME = "OXY";
 
     public DatabaseHelper(Context context) {
         super(context, DB_NAME, null, 1);
+
+        // delete all entries older than 14 days
+        long twoWeeksBeforeNow = System.currentTimeMillis() - (14 * 24 * 60 * 60 * 1000);
+        this.getWritableDatabase().execSQL("DELETE FROM " + TABLE_NAME + " WHERE time < " + twoWeeksBeforeNow + ";");
     }
 
     @Override
@@ -19,7 +24,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         initializeDatabaseRecords(db);
     }
 
-    public void insertRecord(OxyValue value){
+    public void insertRecord(OxyValue value) {
         SQLiteDatabase db = getWritableDatabase();
         insertRecord(db, value.getOxy(), value.getTime());
     }
@@ -28,12 +33,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues record = new ContentValues();
         record.put("oxy", oxy);
         record.put("time", time);
-        db.insert(DB_NAME, null, record);
+        db.insert(TABLE_NAME, null, record);
     }
 
 
     private void createDatabaseTable(SQLiteDatabase db) {
-        String createDatabaseString = "CREATE TABLE " + DB_NAME + " (\n" +
+        String createDatabaseString = "CREATE TABLE " + TABLE_NAME + " (\n" +
                 "\t_id INTEGER PRIMARY KEY AUTOINCREMENT,\n" +
                 "\toxy INTEGER NOT NULL,\n" +
                 "\ttime INTEGER NOT NULL);";
