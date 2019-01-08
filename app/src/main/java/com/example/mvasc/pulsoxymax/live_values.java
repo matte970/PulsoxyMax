@@ -37,6 +37,59 @@ public class live_values extends AppCompatActivity {
         } else {
             // no records in database
         }
+
+        printAverageOxy();
+    }
+
+    public void printAverageOxy() {
+        SQLiteDatabase db = this.databaseHelper.getReadableDatabase();
+
+        String query = "SELECT AVG(oxy), MIN(oxy), MAX(oxy) FROM " + DatabaseHelper.TABLE_NAME + ";";
+
+        String criticalValuesQuery = "SELECT COUNT(oxy), MIN(oxy) FROM " + DatabaseHelper.TABLE_NAME + " WHERE oxy < 90;";
+
+        Cursor cursor = db.rawQuery(query, null);
+        if (cursor.moveToFirst()) {
+            double average = cursor.getDouble(0);
+            int min = cursor.getInt(1);
+            int max = cursor.getInt(2);
+            System.out.println("average: " + average);
+            System.out.println("min: " + min);
+            System.out.println("max: " + max);
+            while (cursor.moveToNext()) {
+                average = cursor.getDouble(0);
+                min = cursor.getInt(1);
+                max = cursor.getInt(2);
+                System.out.println("average: " + average);
+                System.out.println("min: " + min);
+                System.out.println("max: " + max);
+
+            }
+        } else {
+            // no records in database
+        }
+
+        Cursor criticalCursor = db.rawQuery(criticalValuesQuery, null);
+        if (criticalCursor.moveToFirst()) {
+            int count = criticalCursor.getInt(0);
+            int min = criticalCursor.getInt(1);
+
+            System.out.println("critical count: " + count);
+            System.out.println("critical min: " + min);
+            while (criticalCursor.moveToNext()) {
+                count = criticalCursor.getInt(0);
+                min = criticalCursor.getInt(1);
+
+                System.out.println("critical count: " + count);
+                System.out.println("critical min: " + min);
+
+            }
+        } else {
+            // no records in database
+        }
+
+        // TODO call cursor.close() ??? for both ?
+        cursor.close();
     }
 
     private OxyValue getOxyValue(Cursor cursor) {
