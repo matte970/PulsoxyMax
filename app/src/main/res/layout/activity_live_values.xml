@@ -146,8 +146,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#2CE70F"
-        android:clickable="true"
-        android:onClick="printAllRecords"
         android:text="print"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
