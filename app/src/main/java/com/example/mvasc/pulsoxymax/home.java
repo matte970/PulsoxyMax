@@ -26,6 +26,11 @@ public class home extends AppCompatActivity implements OxyChangeListener {
         this.receiver = new LimitBroadcastReceiver(this);
     }
 
+    public void go_to_stats(android.view.View next) {
+        Intent i = new Intent(this, stats.class);
+        startActivity(i);
+    }
+
     public void go_to_options(android.view.View next) {
         Intent i = new Intent(this, set_up.class);
         startActivity(i);
