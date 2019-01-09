@@ -13,6 +13,8 @@ public class live_values extends AppCompatActivity implements OxyChangeListener 
     DatabaseHelper databaseHelper;
 
     private TextView liveOxy;
+    private IntentFilter filter;
+    private LimitBroadcastReceiver receiver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,9 +25,21 @@ public class live_values extends AppCompatActivity implements OxyChangeListener 
 
         this.liveOxy = findViewById(R.id.liveOxy);
 
-        IntentFilter filter = new IntentFilter("PulsOXyMax");
-        LimitBroadcastReceiver receiver = new LimitBroadcastReceiver(this);
+        this.filter = new IntentFilter("PulsOXyMax");
+        this.receiver = new LimitBroadcastReceiver(this);
         registerReceiver(receiver, filter);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        registerReceiver(receiver, filter);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        unregisterReceiver(receiver);
     }
 
     public void addDummyRecord(android.view.View next) {
@@ -110,6 +124,7 @@ public class live_values extends AppCompatActivity implements OxyChangeListener 
     }
 
     public void clickOK(android.view.View next) {
+        unregisterReceiver(receiver);
         Intent i = new Intent(this, home.class);
         startActivity(i);
     }

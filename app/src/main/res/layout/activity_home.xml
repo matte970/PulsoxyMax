@@ -17,6 +17,8 @@
         android:textColor="@android:color/background_light"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/textView10"
+        android:checked="false"
+        android:onClick="recordingSwitchChange"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
