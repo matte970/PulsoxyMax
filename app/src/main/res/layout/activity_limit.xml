@@ -80,6 +80,8 @@
         android:layout_height="wrap_content"
         android:background="@drawable/round_start_ok"
         android:text="OK"
+        android:clickable="true"
+        android:onClick="go_to_home"
         android:textSize="22dp"
         app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"

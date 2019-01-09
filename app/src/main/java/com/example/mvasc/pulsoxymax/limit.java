@@ -41,4 +41,9 @@ public class limit extends AppCompatActivity {
         });
     }
 
+    public void go_to_home(android.view.View next){
+        Intent i = new Intent(this, home.class);
+        startActivity(i);
+    }
+
 }
