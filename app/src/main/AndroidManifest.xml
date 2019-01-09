@@ -22,7 +22,16 @@
         <activity android:name=".live_values" />
         <activity android:name=".set_up" />
         <activity android:name=".stats" />
-        <activity android:name=".tones"></activity>
+        <activity android:name=".tones" />
+
+        <receiver
+            android:name=".BroadcastR">
+            <intent-filter>
+                <action android:name="PulsOXyMax">
+                </action>
+            </intent-filter>
+
+    </receiver>
     </application>
 
 </manifest>
