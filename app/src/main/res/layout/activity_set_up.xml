@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".set_up"
-    android:background="#050D51">
+    android:background="#050D51"
+    tools:context=".set_up">
 
     <Button
         android:id="@+id/button2"
@@ -15,15 +15,15 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/round_white"
+        android:clickable="true"
+        android:onClick="go_to_e_mail"
         android:text="e-mail"
         android:textAllCaps="false"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        android:clickable="true"
-        android:onClick="go_to_e_mail"/>
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 
     <Button
         android:id="@+id/button3"
@@ -49,15 +49,15 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/round_white"
+        android:clickable="true"
+        android:onClick="go_to_limits"
         android:text="Limits"
         android:textAllCaps="false"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3"
-        android:clickable="true"
-        android:onClick="go_to_limits"/>
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
 
     <Button
         android:id="@+id/button5"
@@ -67,15 +67,15 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/round_white"
+        android:clickable="true"
+        android:onClick="go_to_tones"
         android:text="Alarm"
         android:textAllCaps="false"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4"
-        android:clickable="true"
-        android:onClick="go_to_tones"/>
+        app:layout_constraintTop_toBottomOf="@+id/button4" />
 
     <Button
         android:id="@+id/button"
@@ -88,8 +88,9 @@
         android:text="Name"
         android:textAllCaps="false"
         android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -101,12 +102,14 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/round_start_ok"
-        android:text="OK"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button5"
         android:clickable="true"
-        android:onClick="go_to_home"/>
+        android:onClick="go_to_home"
+        android:text="OK"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button5" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -116,13 +119,13 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:clickable="true"
+        android:onClick="go_to_start"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button6"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/logo"
-        android:clickable="true"
-        android:onClick="go_to_start"/>
+        app:srcCompat="@drawable/logo" />
 </android.support.constraint.ConstraintLayout>

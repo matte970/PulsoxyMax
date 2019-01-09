@@ -97,4 +97,9 @@ public class live_values extends AppCompatActivity {
         Long time = cursor.getLong(1);
         return new OxyValue(oxy, time);
     }
+    public void clickOK(android.view.View next){
+        Intent i = new Intent(this,home.class);
+        startActivity(i);
+    }
+
 }
