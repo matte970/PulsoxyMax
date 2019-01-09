@@ -1,4 +1,4 @@
-package com.example.mvasc.pulsoxymax;
+package com.example.randomgenerator;
 
 import android.os.Parcel;
 import android.os.Parcelable;

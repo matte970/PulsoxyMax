@@ -1,14 +1,18 @@
 package com.example.mvasc.pulsoxymax;
 
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.TextView;
 
-public class live_values extends AppCompatActivity {
+public class live_values extends AppCompatActivity implements OxyChangeListener {
 
     DatabaseHelper databaseHelper;
+
+    private TextView liveOxy;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +20,12 @@ public class live_values extends AppCompatActivity {
         setContentView(R.layout.activity_live_values);
 
         this.databaseHelper = new DatabaseHelper(this);
+
+        this.liveOxy = findViewById(R.id.liveOxy);
+
+        IntentFilter filter = new IntentFilter("PulsOXyMax");
+        LimitBroadcastReceiver receiver = new LimitBroadcastReceiver(this);
+        registerReceiver(receiver, filter);
     }
 
     public void addDummyRecord(android.view.View next) {
@@ -98,9 +108,14 @@ public class live_values extends AppCompatActivity {
         Long time = cursor.getLong(1);
         return new OxyValue(oxy, time);
     }
-    public void clickOK(android.view.View next){
-        Intent i = new Intent(this,home.class);
+
+    public void clickOK(android.view.View next) {
+        Intent i = new Intent(this, home.class);
         startActivity(i);
     }
 
+    @Override
+    public void onChange(int oxy, long time) {
+        liveOxy.setText("" + oxy);
+    }
 }
