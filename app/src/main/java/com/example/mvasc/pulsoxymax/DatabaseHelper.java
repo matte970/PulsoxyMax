@@ -7,7 +7,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import java.util.Calendar;
-import java.util.Date;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
@@ -72,6 +71,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             stats.setMaxOxyValue(max);
             stats.setAverageOxyValue(average);
         }
+        cursor.close();
     }
 
     private void addCriticalStats(OxyStats stats, long minTime, long maxTime) {
@@ -87,20 +87,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             stats.setMaxCriticalValue(max);
             stats.setAverageCriticalValue(average);
         }
-    }
-
-    public static void main(String[] args) {
-        Calendar cal = Calendar.getInstance();
-        // january starts is 0 !!!
-        cal.set(2008, 2, 5, 14, 00, 00);
-
-        Date min = cal.getTime();
-        System.out.println(min);
-
-        cal.set(2008, 2, 5, 14, 59, 00);
-        Date max = cal.getTime();
-        System.out.println(max);
-
+        cursor.close();
     }
 
     private void createDatabaseTable(SQLiteDatabase db) {
