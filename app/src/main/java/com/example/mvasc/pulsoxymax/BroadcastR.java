@@ -16,7 +16,7 @@ public class BroadcastR extends BroadcastReceiver {
                 Toast.LENGTH_LONG).show();
 
 //        OxyValues O2 = intent.getParcelableExtra("Ox");
-
+//aaaaaa
 
     }
 }
