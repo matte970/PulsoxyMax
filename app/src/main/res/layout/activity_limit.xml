@@ -5,42 +5,46 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#050D51"
-    tools:context=".home">
+    tools:context=".limit">
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/limitTextView"
         android:layout_width="67dp"
         android:layout_height="28dp"
         android:background="@drawable/round_white"
         android:gravity="center"
         android:text="90"
         app:layout_constraintBottom_toTopOf="@+id/button13"
-        app:layout_constraintEnd_toStartOf="@+id/button12"
+        app:layout_constraintEnd_toStartOf="@+id/limitButtonPlus"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button11"
+        app:layout_constraintStart_toEndOf="@+id/limitButtonMinus"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <Button
-        android:id="@+id/button11"
+        android:id="@+id/limitButtonMinus"
         android:layout_width="36dp"
         android:layout_height="39dp"
+        android:clickable="true"
+        android:onClick="decreaseLimit"
         android:text="-"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textView6"
+        app:layout_constraintEnd_toStartOf="@+id/limitTextView"
         app:layout_constraintHorizontal_bias="0.479"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.319" />
 
     <Button
-        android:id="@+id/button12"
+        android:id="@+id/limitButtonPlus"
         android:layout_width="36dp"
         android:layout_height="39dp"
+        android:clickable="true"
+        android:onClick="increaseLimit"
         android:text="+"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.508"
-        app:layout_constraintStart_toEndOf="@+id/textView6"
+        app:layout_constraintStart_toEndOf="@+id/limitTextView"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.319" />
 
@@ -79,14 +83,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/round_start_ok"
-        android:text="OK"
         android:clickable="true"
         android:onClick="go_to_home"
+        android:text="OK"
         android:textSize="22dp"
         app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/limitTextView" />
 
 </android.support.constraint.ConstraintLayout>
