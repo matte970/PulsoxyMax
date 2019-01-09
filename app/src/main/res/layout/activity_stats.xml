@@ -6,8 +6,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#050D51"
-    tools:context="stats">
+    tools:context=".stats">
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select time"
+        android:background="@drawable/round_start_ok"
+        android:textColor="@android:color/white"
+        android:textSize="20dp"
+        android:onClick="showTimePickerDialog" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select date"
+        android:background="@drawable/round_start_ok"
+        android:textColor="@android:color/white"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="@id/Stats"
+        app:layout_constraintVertical_bias="5"
+        android:onClick="showDatePickerDialog" />
 
     <TextView
         android:id="@+id/textView4"
@@ -29,7 +48,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Stats"
+        >
 
         <LinearLayout
             android:layout_width="0dp"
@@ -93,12 +114,21 @@
 
         </LinearLayout>
 
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical">
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:text="x1"
+                android:textColor="@android:color/white"
+                android:textSize="30dp" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -141,15 +171,6 @@
                 android:layout_weight="1"
                 android:orientation="horizontal"
                 android:text="x5"
-                android:textColor="@android:color/white"
-                android:textSize="30dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:orientation="horizontal"
-                android:text="x6"
                 android:textColor="@android:color/white"
                 android:textSize="30dp" />
 
@@ -220,5 +241,18 @@
 
 
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="60dp"
+        android:layout_height="70dp"
+        android:background="@android:color/background_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/logo"
+        android:clickable="true"
+        android:onClick="go_to_home"/>
 
 </android.support.constraint.ConstraintLayout>
