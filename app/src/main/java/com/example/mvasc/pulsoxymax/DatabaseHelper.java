@@ -2,13 +2,19 @@ package com.example.mvasc.pulsoxymax;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import java.util.Calendar;
+import java.util.Date;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static final String DB_NAME = "PULSOXYMAX";
     public static final String TABLE_NAME = "OXY";
+
+    private SQLiteDatabase db;
 
     public DatabaseHelper(Context context) {
         super(context, DB_NAME, null, 1);
@@ -22,6 +28,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         createDatabaseTable(db);
         initializeDatabaseRecords(db);
+
+        this.db = db;
     }
 
     public void insertRecord(OxyValue value) {
@@ -36,6 +44,64 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, record);
     }
 
+    // january is 0 !!
+    public OxyStats getStatsOfDayAndHour(int day, int month, int year, int hour) {
+        Calendar cal = Calendar.getInstance();
+        cal.set(year, month, day, hour, 0);
+
+        long minTime = cal.getTimeInMillis();
+        long maxTime = minTime + (60 * 60 * 1000);
+
+        OxyStats stats = new OxyStats();
+        addRegularStats(stats, minTime, maxTime);
+        addCriticalStats(stats, minTime, maxTime);
+
+        return stats;
+    }
+
+    private void addRegularStats(OxyStats stats, long minTime, long maxTime) {
+        String query = "SELECT COUNT(oxy), AVG(oxy), MIN(oxy), MAX(oxy) FROM " + DatabaseHelper.TABLE_NAME + " WHERE time > " + minTime + " AND time < " + maxTime + ";";
+        Cursor cursor = this.getReadableDatabase().rawQuery(query, null);
+        if (cursor.moveToFirst()) {
+            int count = cursor.getInt(0);
+            float average = cursor.getFloat(1);
+            int min = cursor.getInt(2);
+            int max = cursor.getInt(3);
+            stats.setRecordedValues(count);
+            stats.setMinOxyValue(min);
+            stats.setMaxOxyValue(max);
+            stats.setAverageOxyValue(average);
+        }
+    }
+
+    private void addCriticalStats(OxyStats stats, long minTime, long maxTime) {
+        String query = "SELECT COUNT(oxy), AVG(oxy), MIN(oxy), MAX(oxy) FROM " + DatabaseHelper.TABLE_NAME + " WHERE oxy < 90 AND time > " + minTime + " AND time < " + maxTime + ";";
+        Cursor cursor = this.getReadableDatabase().rawQuery(query, null);
+        if (cursor.moveToFirst()) {
+            int count = cursor.getInt(0);
+            float average = cursor.getFloat(1);
+            int min = cursor.getInt(2);
+            int max = cursor.getInt(3);
+            stats.setCriticalValues(count);
+            stats.setMinCriticalValue(min);
+            stats.setMaxCriticalValue(max);
+            stats.setAverageCriticalValue(average);
+        }
+    }
+
+    public static void main(String[] args) {
+        Calendar cal = Calendar.getInstance();
+        // january starts is 0 !!!
+        cal.set(2008, 2, 5, 14, 00, 00);
+
+        Date min = cal.getTime();
+        System.out.println(min);
+
+        cal.set(2008, 2, 5, 14, 59, 00);
+        Date max = cal.getTime();
+        System.out.println(max);
+
+    }
 
     private void createDatabaseTable(SQLiteDatabase db) {
         String createDatabaseString = "CREATE TABLE " + TABLE_NAME + " (\n" +
