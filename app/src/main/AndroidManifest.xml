@@ -23,6 +23,7 @@
         <activity android:name=".set_up" />
         <activity android:name=".stats" />
         <activity android:name=".tones" />
+        <activity android:name=".name"></activity>
     </application>
 
 </manifest>

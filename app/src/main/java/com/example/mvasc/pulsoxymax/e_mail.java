@@ -18,7 +18,7 @@ public class e_mail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_e_mail);
         button = (Button) findViewById(R.id.button1);
-        acText = (AutoCompleteTextView) findViewById(R.id.autoCompleteTextView);
+       // acText = (AutoCompleteTextView) findViewById(R.id.autoCompleteTextView);
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.select_dialog_item, hours);
         acText.setThreshold(0);
         acText.setAdapter(adapter);
