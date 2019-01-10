@@ -7,13 +7,6 @@ import android.widget.Button;
 
 public class tones extends AppCompatActivity {
 
-    Button Button1;
-    Button Button2;
-    Button Button3;
-    Button Button4;
-    Button Button5;
-    Button Button6;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
