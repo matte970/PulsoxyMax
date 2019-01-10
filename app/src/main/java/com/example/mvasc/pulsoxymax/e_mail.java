@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.content.Intent;
 
 public class e_mail extends AppCompatActivity {
-
+//hallo
     Button button;              //create new object
     AutoCompleteTextView acText;
     String[] hours = {"24 Hours", "48 Hours", "7 Days", "1 Month"};
