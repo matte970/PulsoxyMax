@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#050D51"
-    tools:context="e_mail">
+    tools:context="name">
 
     <Button
         android:id="@+id/button1"
@@ -28,7 +28,7 @@
         android:layout_marginBottom="58dp"
         android:background="#FFFFFF"
         android:ems="10"
-        android:hint="enter e-mail"
+        android:hint="enter name"
         android:inputType="textEmailAddress"
         android:textColorLink="@android:color/background_light"
         app:layout_constraintEnd_toEndOf="parent"

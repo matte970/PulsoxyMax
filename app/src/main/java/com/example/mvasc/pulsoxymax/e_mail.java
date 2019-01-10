@@ -20,12 +20,12 @@ public class e_mail extends AppCompatActivity {
         button = (Button) findViewById(R.id.button1);
         acText = (AutoCompleteTextView) findViewById(R.id.autoCompleteTextView);
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.select_dialog_item, hours);
-        acText.setThreshold(1);
+        acText.setThreshold(0);
         acText.setAdapter(adapter);
     }
 
-    public void go_to_options(android.view.View next) {
-        Intent i = new Intent(this, stats.class);
+    public void go_to_home(android.view.View next) {
+        Intent i = new Intent(this, home.class);
         startActivity(i);
 
     }
