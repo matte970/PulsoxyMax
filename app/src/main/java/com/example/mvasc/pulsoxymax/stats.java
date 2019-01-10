@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.view.View;
 import android.widget.DatePicker;
+import android.widget.TextView;
 import android.widget.TimePicker;
 
 import java.util.Calendar;
@@ -38,6 +39,13 @@ public class stats extends AppCompatActivity {
         newFragment.show(getSupportFragmentManager(), "datePicker");
     }
 
+    // Global Variables
+    public static int mhour;
+    public static int mminute;
+    public static int myear;
+    public static int mmonth;
+    public static int mday;
+
     public static class TimePickerFragment extends DialogFragment
             implements TimePickerDialog.OnTimeSetListener {
 
@@ -55,6 +63,9 @@ public class stats extends AppCompatActivity {
 
         public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
             // Do something with the time chosen by the user
+            mhour=hourOfDay;
+            mminute=minute;
+
         }
 
 
@@ -76,7 +87,27 @@ public class stats extends AppCompatActivity {
 
             public void onDateSet(DatePicker view, int year, int month, int day) {
                 // Do something with the date chosen by the user
+                myear=year;
+                mmonth=month;
+                mday=day;
             }
         }
+    }
+
+    public void searchDateStats (View view){
+
+        DatabaseHelper mDbHelper = new DatabaseHelper(this);
+
+       OxyStats stats = mDbHelper.getStatsOfDayAndHour(mday,mmonth,myear,mhour);
+
+        TextView textView= (TextView) findViewById(R.id.P1);
+
+        textView.setText(stats.toString());
+
+
+
+
+
+
     }
 }

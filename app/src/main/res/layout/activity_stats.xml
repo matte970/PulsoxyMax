@@ -9,13 +9,14 @@
     tools:context=".stats">
 
     <Button
+        android:id="@+id/button8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Select time"
         android:background="@drawable/round_start_ok"
+        android:onClick="showTimePickerDialog"
+        android:text="Select time"
         android:textColor="@android:color/white"
-        android:textSize="20dp"
-        android:onClick="showTimePickerDialog" />
+        android:textSize="20dp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -129,6 +130,7 @@
                 android:text="x1"
                 android:textColor="@android:color/white"
                 android:textSize="30dp" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -183,6 +185,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/P1"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
@@ -254,5 +257,17 @@
         app:srcCompat="@drawable/logo"
         android:clickable="true"
         android:onClick="go_to_home"/>
+
+    <Button
+        android:id="@+id/search_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="60dp"
+        android:text="SEARCH"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:clickable="true"
+        android:onClick="searchDateStats"/>
 
 </android.support.constraint.ConstraintLayout>
