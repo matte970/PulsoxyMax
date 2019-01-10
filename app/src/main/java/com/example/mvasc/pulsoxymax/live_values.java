@@ -54,6 +54,11 @@ public class live_values extends AppCompatActivity implements OxyChangeListener 
         Intent i = new Intent(this, home.class);
         startActivity(i);
     }
+    public void go_to_home(android.view.View next) {
+        Intent i = new Intent(this, home.class);
+        startActivity(i);
+
+    }
 
     @Override
     public void onChange(int oxy, long time) {

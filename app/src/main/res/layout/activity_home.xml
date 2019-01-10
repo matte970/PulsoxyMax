@@ -40,14 +40,14 @@
         android:layout_width="99dp"
         android:layout_height="40dp"
         android:layout_marginStart="48dp"
-        android:layout_marginBottom="236dp"
+        android:layout_marginBottom="224dp"
+        android:clickable="true"
+        android:onClick="go_to_options"
         android:text="Options"
         android:textColor="@android:color/background_light"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:clickable="true"
-        android:onClick="go_to_options"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView"

@@ -12,10 +12,7 @@ public class set_up extends AppCompatActivity {
         setContentView(R.layout.activity_set_up);
     }
 
-    public void go_to_start(android.view.View next){
-        Intent i = new Intent(this, start.class);
-        startActivity(i);
-    }
+
 
     public void go_to_home(android.view.View next){
         Intent i = new Intent(this, home.class);
@@ -34,6 +31,14 @@ public class set_up extends AppCompatActivity {
 
     public void go_to_e_mail(android.view.View next){
         Intent i = new Intent(this, e_mail.class);
+        startActivity(i);
+    }
+    public void go_to_name(android.view.View next){
+        Intent i = new Intent(this, name.class);
+        startActivity(i);
+    }
+    public void go_to_phone_no(android.view.View next){
+        Intent i = new Intent(this, phone_no.class);
         startActivity(i);
     }
 }
