@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#050D51"
-    tools:context="e_mail">
+    tools:context="name">
 
     <Button
         android:id="@+id/button1"
@@ -21,14 +21,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText_e-mail"
+        android:id="@+id/editText_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="210dp"
         android:layout_marginBottom="58dp"
         android:background="#FFFFFF"
         android:ems="10"
-        android:hint="enter e-mail"
+        android:hint="enter name"
         android:inputType="textEmailAddress"
         android:textColorLink="@android:color/background_light"
         app:layout_constraintEnd_toEndOf="parent"

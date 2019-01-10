@@ -12,7 +12,7 @@ public class start extends AppCompatActivity {
         setContentView(R.layout.activity_start);
     }
     public void go_to_home(android.view.View next){
-        Intent i = new Intent(this, home.class);
+        Intent i = new Intent(this, e_mail.class);
         startActivity(i);
     }
 
