@@ -100,7 +100,7 @@ public class stats extends AppCompatActivity {
 
        OxyStats stats = mDbHelper.getStatsOfDayAndHour(mday,mmonth,myear,mhour);
 
-        TextView textView= (TextView) findViewById(R.id.P1);
+        TextView textView= (TextView) findViewById(R.id.textViewMax);
 
         textView.setText(stats.toString());
 
