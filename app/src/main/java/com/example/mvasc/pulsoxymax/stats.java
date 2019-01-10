@@ -24,9 +24,24 @@ public class stats extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stats);
     }
+
     public void go_to_home(android.view.View next) {
         Intent i = new Intent(this, home.class);
         startActivity(i);
+    }
+
+    public void sendButton(View view) {
+        DatabaseHelper mDbHelper = new DatabaseHelper(this);
+
+        OxyStats stats = mDbHelper.getStatsOfDayAndHour(mday, mmonth, myear, mhour);
+
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_EMAIL, "mvasconez970@hotmail.com");
+        intent.putExtra(Intent.EXTRA_SUBJECT, "Stats");
+        intent.putExtra(Intent.EXTRA_TEXT, stats.toString());
+
+        startActivity(Intent.createChooser(intent, "Send Email"));
     }
 
     public void showTimePickerDialog(View v) {
@@ -63,11 +78,10 @@ public class stats extends AppCompatActivity {
 
         public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
             // Do something with the time chosen by the user
-            mhour=hourOfDay;
-            mminute=minute;
+            mhour = hourOfDay;
+            mminute = minute;
 
         }
-
 
 
         public static class DatePickerFragment extends DialogFragment
@@ -87,27 +101,22 @@ public class stats extends AppCompatActivity {
 
             public void onDateSet(DatePicker view, int year, int month, int day) {
                 // Do something with the date chosen by the user
-                myear=year;
-                mmonth=month;
-                mday=day;
+                myear = year;
+                mmonth = month;
+                mday = day;
             }
         }
     }
 
-    public void searchDateStats (View view){
+    public void searchDateStats(View view) {
 
         DatabaseHelper mDbHelper = new DatabaseHelper(this);
 
-       OxyStats stats = mDbHelper.getStatsOfDayAndHour(mday,mmonth,myear,mhour);
+        OxyStats stats = mDbHelper.getStatsOfDayAndHour(mday, mmonth, myear, mhour);
 
-        TextView textView= (TextView) findViewById(R.id.textViewMax);
+        TextView textView = (TextView) findViewById(R.id.textViewMax);
 
         textView.setText(stats.toString());
-
-
-
-
-
 
     }
 }
