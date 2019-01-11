@@ -31,13 +31,15 @@ public class stats extends AppCompatActivity {
     }
 
     public void sendButton(View view) {
+        String[] e_mail = new String[1];
+        e_mail[0]= "mvasconez970@hotmail.com";
         DatabaseHelper mDbHelper = new DatabaseHelper(this);
 
         OxyStats stats = mDbHelper.getStatsOfDayAndHour(mday, mmonth, myear, mhour);
 
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("text/plain");
-        intent.putExtra(Intent.EXTRA_EMAIL, "mvasconez970@hotmail.com");
+        intent.putExtra(Intent.EXTRA_EMAIL, e_mail);
         intent.putExtra(Intent.EXTRA_SUBJECT, "Stats");
         intent.putExtra(Intent.EXTRA_TEXT, stats.toString());
 
