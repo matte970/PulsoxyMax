@@ -129,6 +129,7 @@
         android:layout_marginBottom="68dp"
         android:text="SEND"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:onClick="sendButton"/>
 
 </android.support.constraint.ConstraintLayout>
