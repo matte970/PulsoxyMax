@@ -32,7 +32,7 @@ public class e_mail extends AppCompatActivity {
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putString("useremail", user_e_mail.getText().toString());
         editor.apply();
-        editor.commit();
+        //editor.commit();
         Toast.makeText(this, "saved", Toast.LENGTH_LONG).show();
 
         Intent i = new Intent(this, set_up.class);
