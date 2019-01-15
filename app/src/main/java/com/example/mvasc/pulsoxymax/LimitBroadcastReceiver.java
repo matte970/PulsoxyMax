@@ -18,5 +18,6 @@ public class LimitBroadcastReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         OxyValues oxyValue = intent.getParcelableExtra("Ox");
         this.oxyChangeListener.onChange(oxyValue.getValue(), oxyValue.getTime());
+
     }
 }

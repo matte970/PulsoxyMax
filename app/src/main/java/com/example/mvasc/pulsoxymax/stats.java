@@ -3,7 +3,9 @@ package com.example.mvasc.pulsoxymax;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -120,5 +122,11 @@ public class stats extends AppCompatActivity {
 
         textView.setText(stats.toString());
 
+    }
+    public String displayData (View view) {
+
+        SharedPreferences sharedPref = getSharedPreferences ("userinfo", Context.MODE_PRIVATE);
+        String e_mail = sharedPref.getString("e-mail", "");
+        return e_mail;
     }
 }
