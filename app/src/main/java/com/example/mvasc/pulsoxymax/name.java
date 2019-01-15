@@ -40,5 +40,8 @@ public class name extends AppCompatActivity {
         editor.apply();
         editor.commit();
         Toast.makeText(this, "saved", Toast.LENGTH_LONG).show();
+
+        Intent i = new Intent(this, set_up.class);
+        startActivity(i);
     }
 }

@@ -7,19 +7,7 @@
     android:background="#050D51"
     tools:context=".phone_no">
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="308dp"
-        android:layout_marginEnd="8dp"
-        android:background="@drawable/round_start_ok"
-        android:onClick="go_to_set_up"
-        android:text="ok"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
 
     <EditText
         android:id="@+id/editText_phone_no"
