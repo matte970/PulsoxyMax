@@ -34,7 +34,7 @@ public class stats extends AppCompatActivity {
 
     public void sendButton(View view) {
         String[] e_mail = new String[1];
-        e_mail[0]= "mvasconez970@hotmail.com";
+        e_mail[0]= displayData();
         DatabaseHelper mDbHelper = new DatabaseHelper(this);
 
         OxyStats stats = mDbHelper.getStatsOfDayAndHour(mday, mmonth, myear, mhour);
@@ -123,10 +123,10 @@ public class stats extends AppCompatActivity {
         textView.setText(stats.toString());
 
     }
-    public String displayData (View view) {
+    public String displayData () {
 
         SharedPreferences sharedPref = getSharedPreferences ("userinfo", Context.MODE_PRIVATE);
-        String e_mail = sharedPref.getString("e-mail", "");
+        String e_mail = sharedPref.getString("useremail", "");
         return e_mail;
     }
 }

@@ -13,16 +13,21 @@ public class OxyStats {
 
     @Override
     public String toString() {
-        return "OxyStats{" +
-                "Recorded Values= " + recordedValues +
-                ", MinOxy Value= " + minOxyValue +
-                ", MaxOxy Value= " + maxOxyValue +
-                ", Average OxyValue= " + averageOxyValue +
-                ", Critical Values= " + criticalValues +
-                ", Average CriticalValue= " + averageCriticalValue +
-                ", MinCritical Value= " + minCriticalValue +
-                ", MaxCritical Value= " + maxCriticalValue +
-                '}';
+        return "Recorded Values= " + recordedValues +
+                ", \n" +
+                        "MinOxy Value= " + minOxyValue +
+                ", \n" +
+                        "MaxOxy Value= " + maxOxyValue +
+                ", \n" +
+                        "Average OxyValue= " + averageOxyValue +
+                ", \n" +
+                        "Critical Values= " + criticalValues +
+                ", \n" +
+                         "Average CriticalValue= " + averageCriticalValue +
+                ", \n" +
+                        "MinCritical Value= " + minCriticalValue +
+                ", \n" +
+                        "MaxCritical Value= " + maxCriticalValue;
     }
 
     public int getMinOxyValue() {

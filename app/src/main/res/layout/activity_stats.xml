@@ -98,26 +98,27 @@
         android:id="@+id/search_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="144dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="56dp"
+        android:layout_marginEnd="8dp"
         android:clickable="true"
         android:onClick="searchDateStats"
         android:text="SEARCH"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textViewMax"
         android:layout_width="320dp"
-        android:layout_height="243dp"
+        android:layout_height="386dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="8dp"
         android:text="CHOOSE A DATE AND HOUR"
         android:textColor="@android:color/background_light"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/search_button" />
 
