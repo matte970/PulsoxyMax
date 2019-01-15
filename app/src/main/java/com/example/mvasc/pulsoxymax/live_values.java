@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
@@ -46,9 +47,6 @@ public class live_values extends AppCompatActivity implements OxyChangeListener 
         this.databaseHelper.insertRecord(dummy);
     }
 
-    public void printStats(android.view.View next) {
-        OxyStats stats = this.databaseHelper.getStatsOfDayAndHour(8, 0, 2019, 18);
-    }
 
     public void clickOK(android.view.View next) {
         unregisterReceiver(receiver);
