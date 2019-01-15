@@ -52,7 +52,7 @@ public class set_up extends AppCompatActivity {
 
     public void displayData(View view) {
         SharedPreferences sharedPref = getSharedPreferences("userinfo", Context.MODE_PRIVATE);
-        String e_mail = sharedPref.getString("e-mail", "");
+        String e_mail = sharedPref.getString("useremail", "");
         user_e_mail.setText(e_mail + "");
     }
 
