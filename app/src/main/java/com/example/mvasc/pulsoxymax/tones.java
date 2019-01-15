@@ -61,12 +61,12 @@ public class tones extends AppCompatActivity {
     }
 
     public void allButtonsGreen(){
-        Button1.setBackgroundColor(Integer.parseInt("#2CE70F"));
-        Button2.setBackgroundColor(Integer.parseInt("#2CE70F"));
-        Button3.setBackgroundColor(Integer.parseInt("#2CE70F"));
-        Button4.setBackgroundColor(Integer.parseInt("#2CE70F"));
-        Button5.setBackgroundColor(Integer.parseInt("#2CE70F"));
-        Button6.setBackgroundColor(Integer.parseInt("#2CE70F"));
+        Button1.setBackgroundColor(Color.GREEN);
+        Button2.setBackgroundColor(Color.GREEN);
+        Button3.setBackgroundColor(Color.GREEN);
+        Button4.setBackgroundColor(Color.GREEN);
+        Button5.setBackgroundColor(Color.GREEN);
+        Button6.setBackgroundColor(Color.GREEN);
     }
 
 }
