@@ -27,6 +27,10 @@ public class phone_no extends AppCompatActivity {
         editor.apply();
         editor.commit();
         Toast.makeText(this, "saved", Toast.LENGTH_LONG).show();
+
+        Intent i = new Intent(this, set_up.class);
+        startActivity(i);
+
     }
     public void go_to_set_up(android.view.View next) {
         Intent i = new Intent(this, set_up.class);
