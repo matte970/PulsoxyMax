@@ -34,9 +34,14 @@ public class e_mail extends AppCompatActivity {
         editor.apply();
         editor.commit();
         Toast.makeText(this, "saved", Toast.LENGTH_LONG).show();
+
+        Intent i = new Intent(this, set_up.class);
+        startActivity(i);
+        displayData(user_e_mail);
     }
 
    public void displayData (View view) {
+
       SharedPreferences sharedPref = getSharedPreferences ("userinfo", Context.MODE_PRIVATE);
        String e_mail = sharedPref.getString("e-mail", "");
        user_e_mail.setText(e_mail + "");
