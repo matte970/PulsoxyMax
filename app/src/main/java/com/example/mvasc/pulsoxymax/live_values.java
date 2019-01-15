@@ -64,9 +64,10 @@ public class live_values extends AppCompatActivity implements OxyChangeListener 
 
         liveOxy.setText("" + oxy);
 
-        if (oxy<90){
-            MediaPlayer mp=MediaPlayer.create(this,R.raw.reception);
-            mp.start();
+        if (oxy<90) {
+                MediaPlayer mp = MediaPlayer.create(this, R.raw.alarmtone);
+                mp.start();
+
         }
     }
 }
