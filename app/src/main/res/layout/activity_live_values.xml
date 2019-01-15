@@ -63,7 +63,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button"
         app:layout_constraintVertical_bias="0.619"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/logo"
+        android:clickable="true"></ImageView>
 
     <Button
         android:id="@+id/button"
@@ -74,41 +75,10 @@
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.175"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.736" />
-
-    <Button
-        android:id="@+id/addRecordButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#2CE70F"
-        android:clickable="true"
-        android:onClick="addDummyRecord"
-        android:text="add"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.881"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.736" />
-
-    <Button
-        android:id="@+id/printRecordButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#2CE70F"
-        android:text="print"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.537"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.736"
-        android:clickable="true"
-        android:onClick="printStats"/>
+        app:layout_constraintVertical_bias="0.742"
+        android:onClick="clickOK"/>
 
 </android.support.constraint.ConstraintLayout>

@@ -49,7 +49,7 @@ public class live_values extends AppCompatActivity implements OxyChangeListener 
 
 
     public void clickOK(android.view.View next) {
-        unregisterReceiver(receiver);
+        //unregisterReceiver(receiver);
         Intent i = new Intent(this, home.class);
         startActivity(i);
     }

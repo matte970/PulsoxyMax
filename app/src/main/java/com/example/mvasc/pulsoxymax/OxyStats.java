@@ -27,8 +27,7 @@ public class OxyStats {
                 ", \n" +
                         "MinCritical Value= " + minCriticalValue +
                 ", \n" +
-                        "MaxCritical Value= " + maxCriticalValue +
-                '}';
+                        "MaxCritical Value= " + maxCriticalValue;
     }
 
     public int getMinOxyValue() {
