@@ -26,9 +26,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
+                android:layout_marginTop="10dp"
                 android:layout_weight="1"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="0dp"
@@ -57,20 +57,21 @@
         android:id="@+id/imageView"
         android:layout_width="85dp"
         android:layout_height="78dp"
+        android:clickable="true"
         android:onClick="go_to_home"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button"
         app:layout_constraintVertical_bias="0.619"
-        app:srcCompat="@drawable/logo"
-        android:clickable="true"></ImageView>
+        app:srcCompat="@drawable/logo"></ImageView>
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#2CE70F"
+        android:onClick="clickOK"
         android:text="OK"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -78,7 +79,6 @@
         app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.742"
-        android:onClick="clickOK"/>
+        app:layout_constraintVertical_bias="0.742" />
 
 </android.support.constraint.ConstraintLayout>

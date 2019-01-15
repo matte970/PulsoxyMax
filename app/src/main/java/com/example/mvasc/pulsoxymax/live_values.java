@@ -53,6 +53,7 @@ public class live_values extends AppCompatActivity implements OxyChangeListener 
         Intent i = new Intent(this, home.class);
         startActivity(i);
     }
+
     public void go_to_home(android.view.View next) {
         Intent i = new Intent(this, home.class);
         startActivity(i);
@@ -64,9 +65,9 @@ public class live_values extends AppCompatActivity implements OxyChangeListener 
 
         liveOxy.setText("" + oxy);
 
-        if (oxy<90) {
-                MediaPlayer mp = MediaPlayer.create(this, R.raw.alarmtone);
-                mp.start();
+        if (oxy < 90) {
+            MediaPlayer mp = MediaPlayer.create(this, R.raw.alarmtone);
+            mp.start();
 
         }
     }
