@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 public class set_up extends AppCompatActivity {
     TextView user_e_mail;
+    TextView user_phone;
+    TextView user_name;
 
 
     @Override
@@ -17,6 +19,9 @@ public class set_up extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_set_up);
         user_e_mail =(TextView) findViewById(R.id.button2);
+        user_phone= (TextView) findViewById(R.id.button3);
+        user_name= (TextView) findViewById(R.id.button);
+
     }
 
 
@@ -54,6 +59,14 @@ public class set_up extends AppCompatActivity {
         SharedPreferences sharedPref = getSharedPreferences("userinfo", Context.MODE_PRIVATE);
         String e_mail = sharedPref.getString("useremail", "");
         user_e_mail.setText(e_mail + "");
+
+        SharedPreferences sharedPref2 = getSharedPreferences("userinfo", Context.MODE_PRIVATE);
+        String phone_no = sharedPref2.getString("userphone", " ");
+        user_phone.setText(phone_no + "");
+
+        SharedPreferences sharedPref1 = getSharedPreferences("userinfo", Context.MODE_PRIVATE);
+        String name = sharedPref1.getString("username", "");
+        user_name.setText(name + "");
     }
 
 }

@@ -43,5 +43,13 @@ public class name extends AppCompatActivity {
 
         Intent i = new Intent(this, set_up.class);
         startActivity(i);
+        displayData(user_name);
+    }
+
+    public void displayData(View view) {
+
+        SharedPreferences sharedPref1 = getSharedPreferences("userinfo", Context.MODE_PRIVATE);
+        String name = sharedPref1.getString("username", "");
+        user_name.setText(name + "");
     }
 }

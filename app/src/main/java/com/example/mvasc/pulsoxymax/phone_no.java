@@ -21,11 +21,11 @@ public class phone_no extends AppCompatActivity {
     }
 
     public void saveInfo(View view){
-        SharedPreferences sharedPref = getSharedPreferences ("userinfo", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPref.edit();
+        SharedPreferences sharedPref2 = getSharedPreferences ("userinfo", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref2.edit();
         editor.putString("userephone", user_phone.getText().toString());
         editor.apply();
-        editor.commit();
+
         Toast.makeText(this, "saved", Toast.LENGTH_LONG).show();
 
         Intent i = new Intent(this, set_up.class);
@@ -35,11 +35,18 @@ public class phone_no extends AppCompatActivity {
     public void go_to_set_up(android.view.View next) {
         Intent i = new Intent(this, set_up.class);
         startActivity(i);
+        displayData(user_phone);
 
     }
     public void go_to_home(android.view.View next) {
         Intent i = new Intent(this, home.class);
         startActivity(i);
 
+    }
+    public void displayData (View view) {
+
+        SharedPreferences sharedPref2 = getSharedPreferences ("userinfo", Context.MODE_PRIVATE);
+        String phone_no = sharedPref2.getString("userphone", "");
+        user_phone.setText(phone_no + "");
     }
 }
