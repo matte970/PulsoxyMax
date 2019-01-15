@@ -2,6 +2,7 @@ package com.example.mvasc.pulsoxymax;
 
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
@@ -62,6 +63,12 @@ public class live_values extends AppCompatActivity implements OxyChangeListener 
 
     @Override
     public void onChange(int oxy, long time) {
+
         liveOxy.setText("" + oxy);
+
+        if (oxy<90){
+            MediaPlayer mp=MediaPlayer.create(this,R.raw.reception);
+            mp.start();
+        }
     }
 }

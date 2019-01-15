@@ -14,14 +14,14 @@ public class OxyStats {
     @Override
     public String toString() {
         return "OxyStats{" +
-                "recordedValues=" + recordedValues +
-                ", minOxyValue=" + minOxyValue +
-                ", maxOxyValue=" + maxOxyValue +
-                ", averageOxyValue=" + averageOxyValue +
-                ", criticalValues=" + criticalValues +
-                ", averageCriticalValue=" + averageCriticalValue +
-                ", minCriticalValue=" + minCriticalValue +
-                ", maxCriticalValue=" + maxCriticalValue +
+                "Recorded Values= " + recordedValues +
+                ", MinOxy Value= " + minOxyValue +
+                ", MaxOxy Value= " + maxOxyValue +
+                ", Average OxyValue= " + averageOxyValue +
+                ", Critical Values= " + criticalValues +
+                ", Average CriticalValue= " + averageCriticalValue +
+                ", MinCritical Value= " + minCriticalValue +
+                ", MaxCritical Value= " + maxCriticalValue +
                 '}';
     }
 
